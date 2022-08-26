@@ -1,7 +1,8 @@
 import methods from "micro-method-router";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 module.exports = methods({
-  async post(req, res) {
+  async post(req: NextApiRequest, res: NextApiResponse) {
     const email = req.body.email;
     if (email) {
       return res.status(200).json({
